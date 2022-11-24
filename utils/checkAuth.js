@@ -7,7 +7,7 @@ export default (req, res, next) => {
         try {
             const decoded = jwt.verify(token, 'secret123')
             req.userId = decoded._id
-            next() // without this function will hang
+            next() // without this empty function process will hang
         } catch (err) {
             return res.status(403).json({
                 message: 'No access'
