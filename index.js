@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
 import multer from 'multer'
@@ -28,6 +29,7 @@ const upload = multer({ storage })
 /* Routers */
 
 app.use(express.json()) // express handles json
+app.use(cors())
 app.use('/uploads', express.static('uploads')) // express opens uploads folder
 
 /* Authorization form */
